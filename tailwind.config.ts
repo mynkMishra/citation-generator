@@ -35,8 +35,11 @@ const config: Config = {
         "240px": "240px",
       },
       spacing: {
+        "6px": "6px",
         "8px": "8px",
         "12px": "12px",
+        "14px": "14px",
+        "18px": "18px",
         "24px": "24px",
         "32px": "32px",
         "10%": "10%",
