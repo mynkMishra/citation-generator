@@ -1,7 +1,7 @@
-const debounce = function (fn: Function, timer = 400) {
+const debounce = (fn: Function, timer = 400): ((...args: string[]) => void) => {
   let timeoutId: number;
   let start: number;
-  return function (...args: string[]) {
+  return (...args: string[]): void => {
     if (!timeoutId) {
       start = performance.now();
       timeoutId = setTimeout(fn, timer, args);

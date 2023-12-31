@@ -1,8 +1,5 @@
 import { useContext } from "react";
-import {
-  OverlayContext,
-  OverlayDispatchContext,
-} from "../contexts/overlay/context";
+import { OverlayDispatchContext } from "../contexts/overlay/context";
 import { OPEN_OVERLAY } from "../contexts/overlay/action.type";
 import Compose from "../compose/page";
 import { CitationGroupsConstant } from "../shared/constants/sidebar.constants";
@@ -14,7 +11,7 @@ export default function Sidebar() {
     {
       id: "compose",
       label: "Compose",
-      action: function () {
+      action: () => {
         overlayDispatch({
           type: OPEN_OVERLAY,
           payload: { isOpen: true, children: <Compose /> },

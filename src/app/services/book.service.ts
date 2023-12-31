@@ -1,6 +1,6 @@
 import { OPEN_ALEX_BASE_URL } from "../shared/config";
 
-export const getBooks = async function (searchToken: string) {
+export const getBooks = async (searchToken: string): Promise<any> => {
   try {
     const filters = ["type:book", `title.search:${searchToken}`];
     const response = await fetch(

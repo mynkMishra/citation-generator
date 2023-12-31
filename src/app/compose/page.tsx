@@ -17,12 +17,12 @@ export default function Compose() {
   const [source, setSource] = useState<SourceOptionType>();
   const [isSourceOptionsOpen, setIsSourceOptionsOpen] = useState(false);
   const [searchResults, setSearchResults] = useState<SearchResultsType>();
-  const onSourceSelect = function (_source: SourceOptionType): void {
+  const onSourceSelect = (_source: SourceOptionType): void => {
     setSource(_source);
     setIsSourceOptionsOpen(false);
   };
 
-  const onSearch = debounce(async function (searchInput: string) {
+  const onSearch = debounce(async (searchInput: string): Promise<void> => {
     const results = await Promise.allSettled<Array<any>>([
       getJounrals(searchInput),
       getBooks(searchInput),
@@ -33,6 +33,7 @@ export default function Compose() {
       bookResults: results[1].status === "fulfilled" ? results[1].value : [],
       articleResults: results[2].status === "fulfilled" ? results[2].value : [],
     });
+  });
 
   return (
     <div id="search-container" className="h-full">

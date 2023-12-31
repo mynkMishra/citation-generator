@@ -1,6 +1,6 @@
 import { OPEN_ALEX_BASE_URL } from "../shared/config";
 
-export const getArticles = async function (searchToken: string) {
+export const getArticles = async (searchToken: string): Promise<any> => {
   try {
     const filters = [
       "type:article",

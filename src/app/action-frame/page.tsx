@@ -5,7 +5,7 @@ export default function ActionFrame() {
         id="empty"
         className="w-full h-full text-4xl font-bold flex flex-col items-center justify-center"
       >
-        <div>Your Citation Tool</div>
+        <div>Your Citation Generator</div>
       </div>
     </div>
   );
